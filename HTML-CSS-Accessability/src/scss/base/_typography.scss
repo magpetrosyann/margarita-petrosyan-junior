@@ -1,0 +1,12 @@
+@import "../abstracts/_variables.scss";
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "OutFit", sans-serif;
+  color: $color-black;
+  line-height: 1.6;
+  font-size: 1.6rem;
+  background-color: $color-white;
+  min-height: 100vh;
+}

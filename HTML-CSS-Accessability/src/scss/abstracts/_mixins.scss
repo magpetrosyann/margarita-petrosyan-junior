@@ -1,0 +1,37 @@
+////INPUT BASE MIXIN
+@mixin input-base {
+  font-family: $font-family-base;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: $color-input-green;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+/////BUTTON MIXIN
+@mixin btn($bg: $color-primary, $color: $color-white) {
+  background-color: $bg;
+  color: $color;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($bg, 8%);
+  }
+}
+
+/////FLEX UTILITIES
+@mixin flex-center($justify: center, $align: center, $direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}

@@ -1,0 +1,120 @@
+@import "../abstracts/variables.scss";
+@import "../abstracts//mixins";
+
+.header__container {
+  border-bottom: 1px solid $color-border;
+  padding: $space-md $space-lg;
+
+  &-inner {
+    @include flex-center(center, center, row, 35.4rem);
+    width: 100%;
+  }
+  &-top {
+    @include flex-center(center, center, row, 8.7rem);
+    width: 53.4rem;
+  }
+}
+/* Logo Styles */
+.logo {
+  @include flex-center(flex-start, center, row, 1rem);
+  cursor: pointer;
+  text-decoration: none;
+
+  img {
+    width: 3.4rem;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Menu Styles */
+.menu {
+  @include flex-center(center, center, row, 1.6rem);
+  flex: 1;
+  min-width: 0;
+  &__item {
+    font-family: $font-family-base;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: $color-black;
+    white-space: nowrap;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+.menu-divider {
+  width: 0;
+  height: 1.8rem;
+
+  svg {
+    display: block;
+    height: 100%;
+  }
+}
+
+/* Language Selector */
+.language {
+  @include flex-center(center, center, row, 0.4rem);
+  cursor: pointer;
+
+  &:hover .menu-item {
+    color: $color-primary;
+  }
+
+  .icon-arrow-down {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+/* Search Styles */
+.search {
+  @include flex-center(flex-start, center, row, 0);
+  width: 42.4rem;
+  flex-shrink: 0;
+
+  &__input {
+    flex: 1;
+    min-width: 0;
+    background-color: $color-white;
+    border: 0.2rem solid $color-primary;
+    border-right: none;
+    border-radius: 0.2rem 0 0 0.2rem;
+    padding: 1.1rem 1.5rem 1.1rem 1.6rem;
+
+    input {
+      @include input-base;
+      width: 100%;
+
+      &::placeholder {
+        color: $color-input-green;
+      }
+    }
+  }
+
+  &__button {
+    @include btn($color-primary);
+    border-radius: 0 0.2rem 0.2rem 0;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #3a6150;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color-primary, 8%);
+      outline: none;
+    }
+  }
+
+  &__icon {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}
