@@ -17,43 +17,45 @@
     />
   </head>
   <body>
-    <header class="header__container">
+  
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header__container" role="banner">
       <div class="header__container-inner">
         <div class="header__container-top">
-          <a href="index.html" class="logo">
+          <a href="index.html" class="logo" aria-label="PlantMe Home">
             <img src="./src/assets/icons/Logo.svg" alt="PlantMe Logo" />
           </a>
 
-          <!-- Menu -->
-          <div class="menu">
-            <div class="menu__item">About Us</div>
-            <div class="menu-divider">
+          <!-- Navigation Menu -->
+          <nav class="menu" role="navigation" aria-label="Main navigation">
+            <a href="#about" class="menu__item" tabindex="0" role="menuitem">About Us</a>
+            <div class="menu-divider" aria-hidden="true">
               <svg fill="none" preserveAspectRatio="none" viewBox="0 0 2 18">
                 <path d="M1 0V18" stroke="#111111" />
               </svg>
             </div>
-            <div class="menu__item">Contact Us</div>
-            <div class="menu-divider">
+            <a href="#contact" class="menu__item" tabindex="0" role="menuitem">Contact Us</a>
+            <div class="menu-divider" aria-hidden="true">
               <svg fill="none" preserveAspectRatio="none" viewBox="0 0 2 18">
                 <path d="M1 0V18" stroke="#111111" />
               </svg>
             </div>
-            <div class="menu__item">Blog</div>
-            <div class="menu-divider">
+            <a href="#blog" class="menu__item" tabindex="0" role="menuitem">Blog</a>
+            <div class="menu-divider" aria-hidden="true">
               <svg fill="none" preserveAspectRatio="none" viewBox="0 0 2 18">
                 <path d="M1 0V18" stroke="#111111" />
               </svg>
             </div>
-            <div class="menu__item">Site Map</div>
-            <div class="menu-divider">
+            <a href="#sitemap" class="menu__item" tabindex="0" role="menuitem">Site Map</a>
+            <div class="menu-divider" aria-hidden="true">
               <svg fill="none" preserveAspectRatio="none" viewBox="0 0 2 18">
                 <path d="M1 0V18" stroke="#111111" />
               </svg>
             </div>
-            <!-- Language Selector -->
-            <div class="language">
-              <div class="menu__item">Eng</div>
-              <div class="icon-arrow-down">
+            <div class="language" role="button" tabindex="0" aria-label="Language selector" aria-haspopup="true" aria-expanded="false">
+              <span class="menu__item">Eng</span>
+              <div class="icon-arrow-down" aria-hidden="true">
                 <svg fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
                   <path
                     d="M17 10L12 15L7 10"
@@ -65,16 +67,28 @@
                 </svg>
               </div>
             </div>
-          </div>
+          </nav>
         </div>
 
-        <!-- Search -->
-        <div class="search">
+    
+        <div class="search" role="search">
+          <label for="site-search" class="visually-hidden">Search this site</label>
           <div class="search__input">
-            <input type="text" placeholder="Search this site" />
+            <input 
+              type="search" 
+              id="site-search"
+              name="site-search"
+              placeholder="Search this site" 
+              aria-label="Search this site"
+              autocomplete="off"
+            />
           </div>
-          <button class="search__button">
-            <div class="search__icon">
+          <button 
+            class="search__button" 
+            type="submit"
+            aria-label="Submit search"
+          >
+            <div class="search__icon" aria-hidden="true">
               <svg fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
                 <path
                   d="M25.5 25.5L21.014 21.006L25.5 25.5ZM23.5 15C23.5 17.2543 22.6045 19.4163 21.0104 21.0104C19.4163 22.6045 17.2543 23.5 15 23.5C12.7457 23.5 10.5837 22.6045 8.98959 21.0104C7.39553 19.4163 6.5 17.2543 6.5 15C6.5 12.7457 7.39553 10.5837 8.98959 8.98959C10.5837 7.39553 12.7457 6.5 15 6.5C17.2543 6.5 19.4163 7.39553 21.0104 8.98959C22.6045 10.5837 23.5 12.7457 23.5 15V15Z"
@@ -89,5 +103,11 @@
         </div>
       </div>
     </header>
+
+    <main id="main-content" role="main">
+   
+    </main>
+
+    <script src="dist/js/main.js"></script>
   </body>
 </html>

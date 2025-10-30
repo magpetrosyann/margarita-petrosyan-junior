@@ -1,0 +1,137 @@
+@import "../abstracts/variables.scss";
+
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: $color-primary;
+  color: $color-white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+
+  &:focus {
+    top: 0;
+    outline: 3px solid $color-white;
+    outline-offset: 2px;
+  }
+}
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+*:focus {
+  outline: 3px solid $color-primary;
+  outline-offset: 2px;
+}
+
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid $color-primary;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+[tabindex]:focus {
+  outline: 3px solid $color-primary;
+  outline-offset: 2px;
+}
+
+button,
+a,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+[role="button"],
+[tabindex] {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 12px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.menu__item {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  position: relative;
+
+  &:focus {
+    outline: 3px solid $color-primary;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  &:hover,
+  &:active {
+    color: $color-primary;
+  }
+}
+
+
+@media (prefers-contrast: high) {
+  *:focus {
+    outline-width: 4px;
+  }
+
+  button,
+  a {
+    border: 2px solid currentColor;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+body.keyboard-navigation *:focus {
+  outline: 3px solid $color-primary;
+  outline-offset: 2px;
+}
+
+body:not(.keyboard-navigation) *:focus {
+  outline: none;
+}
+
+body:not(.keyboard-navigation) *:focus-visible {
+  outline: 3px solid $color-primary;
+  outline-offset: 2px;
+}
+

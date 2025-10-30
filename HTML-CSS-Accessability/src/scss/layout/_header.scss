@@ -14,24 +14,38 @@
     width: 53.4rem;
   }
 }
+
 /* Logo Styles */
 .logo {
   @include flex-center(flex-start, center, row, 1rem);
   cursor: pointer;
   text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px;
+  border-radius: 4px;
 
   img {
     width: 3.4rem;
     height: auto;
     display: block;
   }
+
+  &:focus {
+    outline: 3px solid $color-primary;
+    outline-offset: 2px;
+  }
+
+  
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
-/* Menu Styles */
 .menu {
   @include flex-center(center, center, row, 1.6rem);
   flex: 1;
-  min-width: 0;
+
   &__item {
     font-family: $font-family-base;
     font-size: 1.8rem;
@@ -41,12 +55,32 @@
     line-height: 1.5;
     cursor: pointer;
     transition: color 0.3s ease;
+    text-decoration: none;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
 
     &:hover {
       color: $color-primary;
+      background-color: rgba($color-primary, 0.05);
+    }
+
+    &:focus {
+      outline: 3px solid $color-primary;
+      outline-offset: 2px;
+      color: $color-primary;
+    }
+
+    &:active {
+      background-color: rgba($color-primary, 0.1);
     }
   }
 }
+
 .menu-divider {
   width: 0;
   height: 1.8rem;
@@ -57,13 +91,18 @@
   }
 }
 
-/* Language Selector */
 .language {
   @include flex-center(center, center, row, 0.4rem);
   cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 
-  &:hover .menu-item {
-    color: $color-primary;
+ 
+  &[aria-expanded="true"] {
+    background-color: rgba($color-primary, 0.1);
   }
 
   .icon-arrow-down {
@@ -72,7 +111,6 @@
   }
 }
 
-/* Search Styles */
 .search {
   @include flex-center(flex-start, center, row, 0);
   width: 42.4rem;
@@ -86,13 +124,22 @@
     border-right: none;
     border-radius: 0.2rem 0 0 0.2rem;
     padding: 1.1rem 1.5rem 1.1rem 1.6rem;
+    height: 48px;
+  
 
     input {
       @include input-base;
       width: 100%;
+  
 
       &::placeholder {
         color: $color-input-green;
+      }
+
+      
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
       }
     }
   }
@@ -105,11 +152,16 @@
     align-items: center;
     justify-content: center;
     border: 2px solid #3a6150;
+    height: 48px;
+    width: 48px;
 
     &:hover,
     &:focus {
       background-color: darken($color-primary, 8%);
-      outline: none;
+    }
+    &:focus {
+      outline: 3px solid darken($color-primary, 15%);
+      outline-offset: 2px;
     }
   }
 
@@ -118,3 +170,4 @@
     height: 3.2rem;
   }
 }
+
